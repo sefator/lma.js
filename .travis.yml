@@ -1,6 +1,14 @@
 language: node_js
 node_js:
-  - 6
-  - 8
+- 6
+- 8
 script:
-  - npm run travis
+- npm run travis
+deploy:
+  provider: npm
+  email: jiri.gabrys@gmail.com
+  on:
+    tags: true
+env:
+  global:
+    secure: EK3apyn7acQeQlynF1n7SwEAm8LMcTd+Rr5un38BB3gq2656715cCNqjg7mer7x/d4UgIhJh5iUN3gyE8InDQf3FgXKuzC+CYDk+wzJmnDrgr3ITcHOa5Y+NKWnQoOktZmJcrhOXoZSxqrrW/PJdj7Xcoxv2GZEUHwSFMXU5n1j35AjB0SsK53AfwOCQhL69LnXce3TjkD4NygVp5kMxX+03GL0QTeTNVU2wJWfEiy2TQZ3L1vlWnA8Q7iKzJ744WomXzUE4qkW70/MoBs3S24IQvmH0DzhrDWnKi35tO18WAaj9Hd7ci+B27ATw+QdQFc5BOFMTUuDrmHq29qnX1T+0Wz2ctTOZ+0UXwfDPjufwh8ot57mlY9zy1i/LzMhjYmXv2C141ucrDzyvDkDpjcWv6CNUnoECEwg3/3V3gesBZ1KI9wp7ERmW9uyiyzXhATPPBaQlc5bT4fBnpCr/GgrhcopIOreRIRZd/00IHV9X6PKJzE29rjRa/JdX+SZbfj1l9BDNeniIgavVlZfCGBHFYXnTf23NYzeKVBg7aiXfEMVMx0VDCdpPUxn+XM5FVYTKOV9wN1YSbkyDhBxGr1TrMleKxOyb8I/q5wuyrg1Voclw91wxT5K8wL42hchqKaC2PCxrImsHFxoqFUeBag3v0qthirq8826EDkXsjRE=
