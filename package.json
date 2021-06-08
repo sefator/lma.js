@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
-    "travis": "npm run build" 
+    "travis": "npm run build"
   },
   "files": [
     "lib"
@@ -27,7 +27,6 @@
     "typescript": "^2.9.1"
   },
   "dependencies": {
-    "@types/mathjs": "^3.21.0",
-    "mathjs": "^4.4.2"
+    "mathjs": "^9.4.2"
   }
 }

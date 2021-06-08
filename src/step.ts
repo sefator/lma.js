@@ -71,8 +71,7 @@ export default function step(
     gradientDifference: number,
     parameterizedFunction: (params: number[]) => (x: number) => number
   ) {
-    const identity: math.Matrix
-        = math.multiply(math.eye(params.length), damping * gradientDifference * gradientDifference);
+    const identity = math.multiply(math.identity(params.length), damping * gradientDifference * gradientDifference);
     const l = data.x.length;
     const evaluatedData = new Array(l);
     const func = parameterizedFunction(params);
@@ -87,7 +86,7 @@ export default function step(
       parameterizedFunction
     );
     const matrixFunc = math.transpose(matrixFunction(data, evaluatedData));
-    const inverseMatrix = math.inv(
+    const inverseMatrix = math.inv<math.Matrix>(
       math.add(identity, math.multiply(gradientFunc, math.transpose(gradientFunc))) as math.Matrix
     );
     const p = math.subtract(math.matrix([params]),
@@ -96,7 +95,7 @@ export default function step(
         .multiply(matrixFunc)
         .multiply(gradientDifference)
         .transpose()
-        .valueOf()
+        .valueOf() as math.MathType
     );
 
     return (p as any).toArray()[0];
